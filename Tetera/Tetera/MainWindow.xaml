@@ -1,0 +1,57 @@
+﻿<Window x:Class="Tetera.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tetera"
+        xmlns:sgl="clr-namespace:SharpGL.WPF;assembly=SharpGL.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,88,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="35*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="95*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="229*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="-0.345"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <CheckBox x:Name="Modelo_luz_ambiental" Content="Modelo de luz ambiental" HorizontalAlignment="Left" Margin="31,16,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.017,-0.323" Checked="CheckBox_Checked">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.312"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox x:Name="Modelo_luz_ambiental_global" Content="Modelo de luz ambiental global" HorizontalAlignment="Left" Margin="31,36,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked_1"/>
+        <CheckBox x:Name="Posicion_de_luz" Content="Posición de luz" HorizontalAlignment="Left" Margin="31,56,0,0" VerticalAlignment="Top" Checked="Posicion_de_luz_Checked"/>
+        <CheckBox x:Name="Luz_ambiental" Content="Luz Ambiental" HorizontalAlignment="Left" Margin="31,33,0,0" VerticalAlignment="Top" Checked="Luz_ambiental_Checked" Grid.Row="2"/>
+        <CheckBox x:Name="Luz_especular" Content="Luz Especular" HorizontalAlignment="Left" Margin="31,73,0,0" VerticalAlignment="Top" Checked="Luz_especular_Checked" Grid.Row="2"/>
+        <CheckBox x:Name="Luz_difusa" Content="Luz Difusa" HorizontalAlignment="Left" Margin="31,53,0,0" VerticalAlignment="Top" Checked="Luz_difusa_Checked" Grid.Row="2"/>
+
+        <sgl:OpenGLControl OpenGLDraw="OpenGLControl_OpenGLDraw"
+OpenGLInitialized="OpenGLControl_OpenGLInitialized" Margin="289,-88,0,0" RenderTransformOrigin="0.521,0.503" Grid.RowSpan="3" Grid.ColumnSpan="2" >
+            <sgl:OpenGLControl.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.379"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </sgl:OpenGLControl.RenderTransform>
+        </sgl:OpenGLControl>
+    </Grid>
+</Window>
